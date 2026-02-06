@@ -6,8 +6,27 @@ fn main() {
         sign_in_count: 1,
     };
 
-    user1.email = String::from("anotheremail@example.com");
+    // user1.email = String::from("anotheremail@example.com");
 }
+
+//Using the Field Init Shorthand
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username,
+        email,
+        sign_in_count: 1,
+    }
+}
+
+// fn build_user(email: String, username: String) -> User {
+//     User {
+//         active: true,
+//         username: username,
+//         email: email,
+//         sign_in_count: 1,
+//     }
+// }
 
 struct User {
     active: bool,
