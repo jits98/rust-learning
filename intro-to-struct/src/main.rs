@@ -1,6 +1,23 @@
+// struct User {
+//     active: bool,
+//     username: &str,
+//     email: &str,
+//     sign_in_count: u64,
+// }
+
+// struct AlwaysEqual;
 fn main() {
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
+
+    // let user1 = User {
+    //     active: true,
+    //     username: "someusername123",
+    //     email: "someone@example.com",
+    //     sign_in_count: 1,
+    // };
+
+    // let subject = AlwaysEqual;
+    // let black = Color(0, 0, 0);
+    // let origin = Point(0, 0, 0);
     // let user1 = User {
     //     active: true,
     //     username: String::from("someusername123"),
@@ -22,8 +39,8 @@ fn main() {
 
     // user1.email = String::from("anotheremail@example.com");
 }
-struct Color (i32, i32, i32);
-struct Point (i32, i32, i32);
+// struct Color (i32, i32, i32);
+// struct Point (i32, i32, i32);
 //Using the Field Init Shorthand
 // fn build_user(email: String, username: String) -> User {
 //     User {
