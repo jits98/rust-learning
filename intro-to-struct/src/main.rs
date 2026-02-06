@@ -6,6 +6,18 @@ fn main() {
         sign_in_count: 1,
     };
 
+    let user2 = User {
+        email: String::from("another@example.com"),
+        ..user1
+    };
+
+    // let user2 = User {
+    //     active: user1.active,
+    //     username: user1.username,
+    //     email: String::from("another@example.com"),
+    //     sign_in_count: user1.sign_in_count,
+    // };
+
     // user1.email = String::from("anotheremail@example.com");
 }
 
