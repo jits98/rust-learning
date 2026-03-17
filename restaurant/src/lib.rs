@@ -1,16 +1,24 @@
-use std::{cmp::Ordering, io};
+use std::io::{self, Write};
 
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-    }
-}
+// use std::io;
+// use std::io::Write;
 
-pub use crate::front_of_house::hosting;
 
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-}
+
+
+// use std::{cmp::Ordering, io};
+
+// mod front_of_house {
+//     pub mod hosting {
+//         pub fn add_to_waitlist() {}
+//     }
+// }
+
+// pub use crate::front_of_house::hosting;
+
+// pub fn eat_at_restaurant() {
+//     hosting::add_to_waitlist();
+// }
 
 // use std::fmt::Result;
 // use std::io::Result as IoResult;
