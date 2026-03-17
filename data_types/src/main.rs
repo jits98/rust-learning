@@ -1,24 +1,53 @@
-use std::io;
-
 fn main() {
-    let a = [1,2,3,4,5];
+    print_value(5);
+}
 
-    println!("Please enter an array index.");
+fn print_value(item:u8) {
+    println!("{}", item);
+}
 
-    let mut index = String::new();
 
-    io::stdin()
-        .read_line(&mut index)
-        .expect("Failed to read line");
 
-    let index: usize = index
-        .trim()
-        .parse()
-        .expect("Index entered was not a number");
+// use std::io;
 
-    let element = a[index];
+// fn main() {
+//     let emp_info:(&str, u8) = ("Ramesh", 50);
 
-    println!("The value of the element at index {index} is: {element}")
+//     let emp_name = emp_info.0;
+//     let emp_age = emp_info.1;
+
+//     let (employee_name, employee_age) = emp_info;
+
+//     println!("Employee Name = {}, Employee Age = {}", employee_name, employee_age);
+
+//     println!("Employee name = {}, Employee Age = {}", emp_name, emp_age);
+// }
+
+// fn main() {
+//     let mut string_literal:String = String::from("Hi, Code Eaters!!!");
+//     string_literal.push_str(" What's up?");
+//     println!("This is string literal {}", string_literal);
+// }
+
+// fn main() {
+    // let a = [1,2,3,4,5];
+
+    // println!("Please enter an array index.");
+
+    // let mut index = String::new();
+
+    // io::stdin()
+    //     .read_line(&mut index)
+    //     .expect("Failed to read line");
+
+    // let index: usize = index
+    //     .trim()
+    //     .parse()
+    //     .expect("Index entered was not a number");
+
+    // let element = a[index];
+
+    // println!("The value of the element at index {index} is: {element}")
     // let x = 2.0;
 
     // let y: f32 = 3.0;
@@ -41,7 +70,7 @@ fn main() {
 
 //    math();
     //   arrays();
-}
+
 
 
 
