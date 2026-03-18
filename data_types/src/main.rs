@@ -1,10 +1,62 @@
 fn main() {
-    print_value(5);
+    let s1:String = String::from("hello");
+    let (s2, len) = calculate_length(s1);
+    println!("The length of {} is {}", s2, len);
 }
 
-fn print_value(item:u8) {
-    println!("{}", item);
+fn calculate_length(s:String) -> (String, usize) {
+    let length:usize = s.len();
+    return (s, length);
 }
+
+
+// fn main() {
+//     let s1:String = get_string();
+//     println!("This is s1: {}", s1);
+
+//     let s2:String = String::from("world");
+//     let s3:String = send_get_string(s2); //Ownership Transferred
+
+//     println!("This is s3:{}", s3);
+// }
+
+// fn get_string() -> String {
+//     let new_string = String::from("hello");
+//     return new_string;
+// }
+
+// fn send_get_string(received_string:String) -> String {
+//     return received_string;
+// }
+
+// fn main() {
+//     let x:String = String::from("Hello");
+//     process_string(x);
+//     // println!("The value of x in main() is {}", x);
+// }
+
+// fn process_string(item:String) {
+//     println!("The value of x in process_string() is {}", item);
+// }
+
+// fn main() {
+//     let num1:u8 = 10;
+//     let num2:u8 = 20;
+//     let result:u8 = add(num1,num2);
+//     println!("The sum of num1 and num2 is {}", result);
+// }
+
+// fn add(item1:u8, item2:u8) -> u8 {
+//     return item1 + item2;
+// }
+
+// fn main() {
+//     print_value(5);
+// }
+
+// fn print_value(item:u8) {
+//     println!("{}", item);
+// }
 
 
 
