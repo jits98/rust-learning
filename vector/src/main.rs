@@ -48,17 +48,19 @@ fn main() {
     //     println!("{i}");
     // }
 
-    enum SpreadsheetCell {
-        Int(i32),
-        Float(f64),
-        Text(String),
-    }
+    // enum SpreadsheetCell {
+    //     Int(i32),
+    //     Float(f64),
+    //     Text(String),
+    // }
 
-    let row = vec![
-        SpreadsheetCell::Int(3),
-        SpreadsheeCell::Text(String::from("blue")),
-        SpreadsheetCell::Float(10.12);
+    // let row = vec![
+    //     SpreadsheetCell::Int(3),
+    //     SpreadsheeCell::Text(String::from("blue")),
+    //     SpreadsheetCell::Float(10.12);
 
-    ]
+    // ]
+
+    
 
 }
