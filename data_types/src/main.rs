@@ -1,4 +1,46 @@
+use std::io;
 
+fn main() {
+    println!("Please enter some input.");
+    let mut input = String::new();
+    io::stdin()
+    .read_line(&mut input)
+    .expect("Failed to read the input");
+    println!("User input: {}", input);
+
+
+    // fn is_even(num:i16) -> bool {
+    //     return num % 2 == 0;
+    //     // if num % 2 == 0 {
+    //     //     return true;
+    //     // }
+    //     // return false;
+    // }
+
+    // let number = 150;
+    // match number {
+    //     x if is_even(x) => println!("Even"),
+    //     x if !is_even(x) => println!("Odd"),
+    //     _ => println!("Number is not recognizable")
+    // }
+    // let number = 9;
+
+    // match number {
+    //     1 | 3 => println!("Number is one or three"),
+    //     2 | 4 => println!("Number is two or four"),
+    //     5 => println!("Number is five"),
+    //     _ => println!("Number is not recognizable"),
+    // }
+}
+
+
+// fn main() {
+//     let arr = [1,2,3];
+
+//     for element in &arr {
+//         println!("{}", element);
+//     }
+// }
 
 
 // fn main() {
