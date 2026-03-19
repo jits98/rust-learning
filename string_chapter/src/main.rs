@@ -1,11 +1,25 @@
 fn main() {
-    let s1 = String::from("tic");
-    let s2 = String::from("tac");
-    let s3 = String::from("toe");
+    for c in "Зд".chars() {
+        println!("{c}");
+    }
 
-    let s = format!("{s1}-{s2}-{s3}");
-    // let s = s1 + "-" + &s2 + "-" + &s3;
-    println!("{}", s); 
+    for b in "Зд".bytes() {
+        println!("{b}");
+    }
+    // let hello = "Здравствуйте";
+
+    // let s = &hello[0..4];
+    // println!("{s}");
+    // let s1 = String::from("hi");
+    // let h = s1[0];
+    // println!("{h}");
+    // let s1 = String::from("tic");
+    // let s2 = String::from("tac");
+    // let s3 = String::from("toe");
+
+    // let s = format!("{s1}-{s2}-{s3}");
+    // // let s = s1 + "-" + &s2 + "-" + &s3;
+    // println!("{}", s); 
 
     // let s1 = String::from("Hello, ");
     // let s2 = String::from("world! ");
