@@ -1,12 +1,135 @@
 fn main() {
-    let s1:String = String::from("hello");
-    let len:usize = calculate_length(&s1);
-    println!("The length of {} is {}", s1, len);
+    let mut arr1;
+
+    arr1 = [1,2,3,4,5];
+
+    println!("arr1[0]={}", arr1[0]);
+    println!("arr1={:?}", arr1);
+
+    arr1[2] = 30;
+    println!("arr1={:?}", arr1);
+
+    println!("Array length is {}", arr1.len());
+
 }
 
-fn calculate_length(s2:&String) -> usize {
-    return s2.len();
-}
+
+
+// mod manufacturer {
+//     pub mod factory {
+//         pub fn make_product() {
+//             println!("Making Product.");
+//         }
+
+//         pub fn package_product() {
+//             println!("Packaging product");
+//         }
+//     }
+// }
+
+// mod store_a {
+//     use crate::manufacturer::factory::make_product;
+
+//     pub fn sell_to_customer() {
+//         make_product();
+//     }
+// }
+
+// fn main() {
+//     let reference_to_nothing = create_string_ref();
+// }
+
+// fn create_string_ref() -> &String {
+//     let s:String = String::from("hello");
+//     return &s;
+// }
+
+
+// fn main() {
+//     let x = 5;
+//     // println!("address={:p}", &x);
+//     let y = &x;
+//     println!("{}", y);
+// }
+
+
+// mod building {
+//     pub mod first_floor {
+//         pub mod room_101 {
+//             pub fn say_hello() {
+//                 println!("Hello from Room 101!");
+//             }
+
+//             pub fn call_neighbor() {
+//                 crate::building::first_floor::room_102::say_hi();
+//                 super::room_102::say_hi();
+//                 self::say_hello();
+//             }
+//         }
+
+//         pub mod room_102 {
+//             pub fn say_hi() {
+//                 println!("Hi from Room 102!");
+//             }
+
+//             pub fn call_upstairs() {
+//                 super::super::second_floor::room_201::say_hey();
+//             }
+//         }
+//     }
+
+//     pub mod second_floor {
+//         pub mod room_201 {
+//             pub fn say_hey() {
+//                 println!("Hey from Room 201!");
+//             }
+//             pub fn call_downstairs() {
+//                 super::super::first_floor::room_101::say_hello();
+//             }
+//         }
+//     }
+// }
+
+// fn main() {
+//     crate::building::first_floor::room_101::say_hello();
+//     building::first_floor::room_101::say_hello();
+
+//     building::first_floor::room_101::call_neighbor();
+//     building::first_floor::room_102::call_upstairs();
+//     building::second_floor::room_201::call_downstairs();
+// }
+
+// fn main() {
+//     let mut s1:String = String::from("hello");
+//     let w1 = &mut s1;
+//     w1.push_str(" World");
+//     println!("w1 = {}", w1);
+//     let w2 = &mut s1;
+//     w2.push_str(" Code");
+//     println!("w2 = {}", w2);
+
+// }
+
+
+// fn main() {
+//     let mut s1:String = String::from("Hello");
+//     append_string(&mut s1);
+//     println!("The new string is {}", s1);
+// }
+
+// fn append_string(s3:&mut String) {
+//     s3.push_str(" World");
+// }
+
+// fn main() {
+//     let s1:String = String::from("hello");
+//     let len:usize = calculate_length(&s1);
+//     println!("The length of {} is {}", s1, len);
+// }
+
+// fn calculate_length(s2:&String) -> usize {
+//     return s2.len();
+// }
 
 // fn main() {
 //     let s1:String = String::from("hello");
