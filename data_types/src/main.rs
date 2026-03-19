@@ -1,17 +1,71 @@
 fn main() {
-    let mut arr1;
+    let mut vrr: Vec<&str> = vec!["Hello", "World", "Coders"];
+    // write_vrr(&vrr);
+    // write_vrr(vrr.clone());
+    write_vrr(&mut vrr);
 
-    arr1 = [1,2,3,4,5];
-
-    println!("arr1[0]={}", arr1[0]);
-    println!("arr1={:?}", arr1);
-
-    arr1[2] = 30;
-    println!("arr1={:?}", arr1);
-
-    println!("Array length is {}", arr1.len());
-
+    println!("vrr={:?}", vrr);
 }
+
+fn write_vrr(vrr2: &mut Vec<&str>) {
+    vrr2.push("Eater");
+    println!("vrr2= {:?}", vrr2);
+}
+
+
+// fn main() {
+//     // let mut v:Vec<i32> = Vec::new();
+//     // let mut v = Vec::<i32>::new();
+
+//     // v.push(1);
+//     // v.push(2);
+//     // v.push(3);
+
+//     let mut v = vec![1,2,3,4,5];
+//     v.push(10);
+//     v.pop();
+
+//     println!("Vector v={:?}", v);
+// }
+
+
+
+// fn main() {
+//     let arr: [&str; 3] = ["Hello", "World", "Coders"];
+//     read_arr(&arr);
+//     println!("arr={:?}", arr);
+
+//     // let mut arr: [&str; 3] = ["Hello", "World", "Coders"];
+//     // write_arr(&mut arr);
+//     // println!("arr={:?}", arr);
+//     // let arr: [&str; 3] = ["Hello", "World", "Coders"];
+//     // write_arr(arr);
+//     // println!("arr={:?}", arr);
+// }
+
+// fn read_arr(arr2:& [&str; 3]) {
+//     println!("arr2={:?}", arr2);
+//     // arr2[0] = "Fellow";
+//     // println!("arr2={:?}", arr2);
+//     // arr1[0] = "Fellow";
+//     // println!("arr1={:?}",arr1);
+// }
+
+
+// fn main() {
+//     let mut arr1;
+
+//     arr1 = [1,2,3,4,5];
+
+//     println!("arr1[0]={}", arr1[0]);
+//     println!("arr1={:?}", arr1);
+
+//     arr1[2] = 30;
+//     println!("arr1={:?}", arr1);
+
+//     println!("Array length is {}", arr1.len());
+
+// }
 
 
 
