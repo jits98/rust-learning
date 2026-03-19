@@ -1,16 +1,19 @@
-fn main() {
-    let mut vrr: Vec<&str> = vec!["Hello", "World", "Coders"];
-    // write_vrr(&vrr);
-    // write_vrr(vrr.clone());
-    write_vrr(&mut vrr);
 
-    println!("vrr={:?}", vrr);
-}
 
-fn write_vrr(vrr2: &mut Vec<&str>) {
-    vrr2.push("Eater");
-    println!("vrr2= {:?}", vrr2);
-}
+
+// fn main() {
+//     let mut vrr: Vec<&str> = vec!["Hello", "World", "Coders"];
+//     // write_vrr(&vrr);
+//     // write_vrr(vrr.clone());
+//     write_vrr(&mut vrr);
+
+//     println!("vrr={:?}", vrr);
+// }
+
+// fn write_vrr(vrr2: &mut Vec<&str>) {
+//     vrr2.push("Eater");
+//     println!("vrr2= {:?}", vrr2);
+// }
 
 
 // fn main() {
