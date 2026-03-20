@@ -1,11 +1,33 @@
 fn main() {
-    for c in "Зд".chars() {
-        println!("{c}");
-    }
+    let mut message = String::from("Hello");
+    message.push('!');
+    message.push_str(" World");
+    println!("{}", message);
 
-    for b in "Зд".bytes() {
-        println!("{b}");
-    }
+    let mut story = String::new();
+    story.push_str("Once upon a time");
+    story.push(' ');
+    story.push_str("there was a Rust programmer");
+    println!("{}", story);
+
+    // let mut empty_sentence = String::new();
+
+    // let my_name = "Alice".to_string();
+    // println!("{}", my_name);
+
+    // let also_name = String::from("Bob");
+    // println!("{}", also_name);
+
+    // let greeting = String::from("Hello");
+    // println!("{}", greeting);
+
+    // for c in "Зд".chars() {
+    //     println!("{c}");
+    // }
+
+    // for b in "Зд".bytes() {
+    //     println!("{b}");
+    // }
     // let hello = "Здравствуйте";
 
     // let s = &hello[0..4];
