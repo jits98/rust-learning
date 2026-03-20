@@ -1,14 +1,54 @@
 fn main() {
-    let mut message = String::from("Hello");
-    message.push('!');
-    message.push_str(" World");
-    println!("{}", message);
+    let sentence = String::from("The quick brown fox");
 
-    let mut story = String::new();
-    story.push_str("Once upon a time");
-    story.push(' ');
-    story.push_str("there was a Rust programmer");
-    println!("{}", story);
+    let first_word = &sentence[0..3];
+    println!("First word: {}", first_word);
+
+    let weird = String::from("नमस्ते");
+    // let slice = &weird[0..3];
+    // println!("Word: {}", slice);
+    let mut chars = weird.chars();
+    println!("{:?}", chars);
+    let first_char = chars.next();
+    println!("First Character: {:?}", first_char);
+
+
+    // let hello = String::from("Hello");
+    // println!("Bytes: {:?}", hello.as_bytes());
+
+    // for c in hello.chars() {
+    //     println!("Character: {}", c);
+    // }
+
+    // for (i, &byte) in hello.as_bytes().iter().enumerate() {
+    //     println!("Byte {}: {}", i, byte);
+    // }
+
+    // let namaste = String::from("नमस्ते");
+    // println!("Length in bytes: {}", namaste.len());
+    // println!("Characters count: {}", namaste.chars().count());
+
+
+    // let first = String::from("Hello");
+    // let second = String::from("World");
+    // let combined = first + " " + &second;
+    // println!("{}", combined);
+
+    // let frog = String::from("Kermit");
+    // let pig = String::from("Miss Piggy");
+    // let muppets = format!("{} and {}", frog, pig);
+    // println!("{}", muppets);
+    // println!("Frog: {}", frog);
+    // let mut message = String::from("Hello");
+    // message.push('!');
+    // message.push_str(" World");
+    // println!("{}", message);
+
+    // let mut story = String::new();
+    // story.push_str("Once upon a time");
+    // story.push(' ');
+    // story.push_str("there was a Rust programmer");
+    // println!("{}", story);
 
     // let mut empty_sentence = String::new();
 
