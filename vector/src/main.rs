@@ -1,5 +1,20 @@
 fn main() {
 
+    let classroom_grades = vec![85, 90, 78, 92, 88];
+
+    println!("All grades:");
+    for grade in &classroom_grades {
+        println!("Student scored: {}", grade);
+    }
+
+    let mut allowances = vec![5, 10, 15];
+    for money in &mut allowances {
+        *money += 2;
+        println!("New allowance: {}", money);
+    }
+
+
+
     // let fruit_basket = vec!["apple", "banana", "orange", "grape"];
 
     // let first_fruit = &fruit_basket[0];
