@@ -1,13 +1,37 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut fruit_stand = HashMap::new();
+    let mut grades = HashMap::new();
 
-    fruit_stand.insert(String::from("apple"), 5);
-    fruit_stand.insert(String::from("banana"), 3);
-    fruit_stand.insert(String::from("orange"), 7);
+    grades.insert(String::from("Alice"), 95);
+    grades.insert(String::from("Bob"), 87);
+    grades.insert(String::from("Charlie"), 92);
 
-    println!("Fruit stand: {:?}", fruit_stand);
+    let alice_grade = grades.get("Alice");
+    match alice_grade {
+        Some(grade) => println!("Alice scored: {}", grade),
+        None => println!("Alice not found!"),
+    }
+
+    let david_grade = grades.get("David").copied().unwrap_or(0);
+    println!("David's grade: {}", david_grade);
+
+    println!("\nAll grades:");
+    for (student, grade) in grades {
+        println!("{}: {}", student, grade);
+    }
+    // println!("{alice_grade:?}");
+    // let mut fruit_stand = HashMap::new();
+
+    // fruit_stand.insert(String::from("apple"), 5);
+    // fruit_stand.insert(String::from("banana"), 3);
+    // fruit_stand.insert(String::from("orange"), 7);
+
+    // println!("Fruit stand: {:?}", fruit_stand);
+
+    // fruit_stand.insert(String::from("apple"), 8);
+
+    // println!("After restock: {:?}", fruit_stand);
     
     // let mut toy_cabinet: HashMap<String, i32> = HashMap::new();
 
