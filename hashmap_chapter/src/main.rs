@@ -1,81 +1,107 @@
 use std::collections::HashMap;
-use std::io::{self, Write};
 
 fn main() {
-    let mut company: HashMap<String, Vec<String>> = HashMap::new();
+    let mut fruit_stand = HashMap::new();
 
-    loop {
-        println!("\n--- Employee Management System ---");
-        println!("Commands:");
-        println!(" Add [name] to [department] ");
-        println!(" List [department]");
-        println!(" List all");
-        println!(" quit");
-        print!["\nEnter command: "];
-        io::stdout().flush().unwrap();
+    fruit_stand.insert(String::from("apple"), 5);
+    fruit_stand.insert(String::from("banana"), 3);
+    fruit_stand.insert(String::from("orange"), 7);
 
-        let mut input = String::new();
+    println!("Fruit stand: {:?}", fruit_stand);
+    
+    // let mut toy_cabinet: HashMap<String, i32> = HashMap::new();
 
-        io::stdin()
-            .read_line(&mut input)
-            .expect("Failed to read line");
+    // let teams = vec![
+    //     String::from("Blue"),
+    //     String::from("Red"),
+    //     String::from("Yellow"),
+    // ];
+    // let scores = vec![10, 25, 15];
 
-        let input = input.trim();
+    // let team_scores: HashMap<_,_> = teams.iter().zip(scores.iter()).collect();
+    // println!("{:?}", team_scores);
 
-        if input == "quit" {
-            break;
-        }
-
-        process_command(&mut company, input);
-    }
 }
 
-fn process_command(company: &mut HashMap<String, Vec<String>>, command: &str) {
-    let parts: Vec<&str> = command.split_whitespace().collect();
 
-    match parts.as_slice() {
-        ["Add", name, "to", department] => {
-            let employees = company
-                .entry(department.to_string())
-                .or_insert_with(Vec::new);
+// use std::collections::HashMap;
+// use std::io::{self, Write};
 
-            employees.push(name.to_string());
-            employees.sort();
-            println!("Added {} to {}", name, department);
-        },
+// fn main() {
+//     let mut company: HashMap<String, Vec<String>> = HashMap::new();
 
-        ["List", department] => {
-            match company.get(*department) {
-                Some(employees) => {
-                    println!("\n{} department:", department);
-                    for employee in employees {
-                        println!(" - {}", employee);
-                    }
-                }, 
-                None => println!("Department '{}' not found", department),
-            }
-        },
+//     loop {
+//         println!("\n--- Employee Management System ---");
+//         println!("Commands:");
+//         println!(" Add [name] to [department] ");
+//         println!(" List [department]");
+//         println!(" List all");
+//         println!(" quit");
+//         print!["\nEnter command: "];
+//         io::stdout().flush().unwrap();
 
-        ["List", "all"] => {
-            if company.is_empty() {
-                println!("No employees found");
-                return;
-            }
+//         let mut input = String::new();
 
-            let mut departments: Vec<&String> = company.keys().collect();
-            departments.sort();
+//         io::stdin()
+//             .read_line(&mut input)
+//             .expect("Failed to read line");
 
-            for dept in departments {
-                println!("\n{}:", dept);
-                let employees = company.get(dept).unwrap();
-                for employee in employees {
-                    println!(" - {}", employee);
-                }
-            }
-        },
-        _ => println!("Invalid command. Use: Add [name] to [department], List [department], List all, or quit"),
-    }
-}
+//         let input = input.trim();
+
+//         if input == "quit" {
+//             break;
+//         }
+
+//         process_command(&mut company, input);
+//     }
+// }
+
+// fn process_command(company: &mut HashMap<String, Vec<String>>, command: &str) {
+//     let parts: Vec<&str> = command.split_whitespace().collect();
+
+//     match parts.as_slice() {
+//         ["Add", name, "to", department] => {
+//             let employees = company
+//                 .entry(department.to_string())
+//                 .or_insert_with(Vec::new);
+
+//             employees.push(name.to_string());
+//             employees.sort();
+//             println!("Added {} to {}", name, department);
+//         },
+
+//         ["List", department] => {
+//             match company.get(*department) {
+//                 Some(employees) => {
+//                     println!("\n{} department:", department);
+//                     for employee in employees {
+//                         println!(" - {}", employee);
+//                     }
+//                 }, 
+//                 None => println!("Department '{}' not found", department),
+//             }
+//         },
+
+//         ["List", "all"] => {
+//             if company.is_empty() {
+//                 println!("No employees found");
+//                 return;
+//             }
+
+//             let mut departments: Vec<&String> = company.keys().collect();
+//             departments.sort();
+
+//             for dept in departments {
+//                 println!("\n{}:", dept);
+//                 let employees = company.get(dept).unwrap();
+//                 for employee in employees {
+//                     println!(" - {}", employee);
+//                 }
+//             }
+//         },
+//         _ => println!("Invalid command. Use: Add [name] to [department], List [department], List all, or quit"),
+//     }
+// }
 
 
 // use std::collections::HashMap;
