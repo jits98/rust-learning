@@ -1,37 +1,60 @@
 use std::collections::HashMap;
 
 fn main() {
-    #[derive(Debug)]
-    struct Contact {
-        name: String,
-        phone: String,
-    }
+    let mut grade_book: HashMap<String, Vec<i32>> = HashMap::new();
 
-    let mut phonebook: HashMap<String, Contact> = HashMap::new();
+    grade_book.entry(String::from("Math")).or_insert(vec![]).push(95);
+    grade_book.entry(String::from("Math")).or_insert(vec![]).push(87);
+    grade_book.entry(String::from("Science")).or_insert(vec![]).push(92);
 
-    phonebook.insert(
-        String::from("Mom"),
-        Contact {
-            name: String::from("Jane Smith"),
-            phone: String::from("555-1234"),
-        },
-    );
+    println!("Grade book: {:?}", grade_book);
 
-    phonebook.insert(
-        String::from("Pizza Place"),
-        Contact {
-            name: String::from("Domino's"),
-            phone: String::from("555-PIZZA"),
-        },
-    );
+    // let mut scores = HashMap::new();
+    // let blue_score = 10;
+    // scores.insert(String::from("Blue"), blue_score);
+    // println!("Blue score still exists: {}", blue_score);
 
-    match phonebook.get("Mom") {
-        Some(contact) => println!("Calling Mom at {}", contact.phone),
-        None => println!("Mom not in phonebook"),
-    }
+    // let mut teams = HashMap::new();
+    // let blue_team = String::from("Blue");
+    // teams.insert(blue_team, 10);
 
-    phonebook.remove("Pizza Place");
-    println!("After removing Pizza Place: {:?}", phonebook);
+    // let mut references = HashMap::new();
+    // let key = String::from("key");
+    // let value = String::from("value");
+    // references.insert(&key, &value);
+    // println!("Can still use: {} and {}", key, value);
+
+    // #[derive(Debug)]
+    // struct Contact {
+    //     name: String,
+    //     phone: String,
+    // }
+
+    // let mut phonebook: HashMap<String, Contact> = HashMap::new();
+
+    // phonebook.insert(
+    //     String::from("Mom"),
+    //     Contact {
+    //         name: String::from("Jane Smith"),
+    //         phone: String::from("555-1234"),
+    //     },
+    // );
+
+    // phonebook.insert(
+    //     String::from("Pizza Place"),
+    //     Contact {
+    //         name: String::from("Domino's"),
+    //         phone: String::from("555-PIZZA"),
+    //     },
+    // );
+
+    // match phonebook.get("Mom") {
+    //     Some(contact) => println!("Calling Mom at {}", contact.phone),
+    //     None => println!("Mom not in phonebook"),
+    // }
+
+    // phonebook.remove("Pizza Place");
+    // println!("After removing Pizza Place: {:?}", phonebook);
 
 
     // let mut book_shelf = HashMap::new();
