@@ -1,25 +1,41 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut grades = HashMap::new();
+    let mut book_shelf = HashMap::new();
+    book_shelf.insert(String::from("Harry Potter"), 3);
+    book_shelf.entry(String::from("Lord of the Rings")).or_insert(1);
+    book_shelf.entry(String::from("Harry Potter")).or_insert(5);
 
-    grades.insert(String::from("Alice"), 95);
-    grades.insert(String::from("Bob"), 87);
-    grades.insert(String::from("Charlie"), 92);
+    println!("{:?}", book_shelf);
 
-    let alice_grade = grades.get("Alice");
-    match alice_grade {
-        Some(grade) => println!("Alice scored: {}", grade),
-        None => println!("Alice not found!"),
-    }
+    // let mut word_count = HashMap::new();
+    // let text = "hello world hello rust hello world";
 
-    let david_grade = grades.get("David").copied().unwrap_or(0);
-    println!("David's grade: {}", david_grade);
+    // for word in text.split_whitespace() {
+    //     let count = word_count.entry(word).or_insert(0);
+    //     *count += 1;
+    // }
 
-    println!("\nAll grades:");
-    for (student, grade) in grades {
-        println!("{}: {}", student, grade);
-    }
+    // println!("Word counts: {:?}", word_count);
+    // let mut grades = HashMap::new();
+
+    // grades.insert(String::from("Alice"), 95);
+    // grades.insert(String::from("Bob"), 87);
+    // grades.insert(String::from("Charlie"), 92);
+
+    // let alice_grade = grades.get("Alice");
+    // match alice_grade {
+    //     Some(grade) => println!("Alice scored: {}", grade),
+    //     None => println!("Alice not found!"),
+    // }
+
+    // let david_grade = grades.get("David").copied().unwrap_or(0);
+    // println!("David's grade: {}", david_grade);
+
+    // println!("\nAll grades:");
+    // for (student, grade) in grades {
+    //     println!("{}: {}", student, grade);
+    // }
     // println!("{alice_grade:?}");
     // let mut fruit_stand = HashMap::new();
 
