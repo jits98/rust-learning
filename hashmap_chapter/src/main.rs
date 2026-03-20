@@ -1,12 +1,45 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut book_shelf = HashMap::new();
-    book_shelf.insert(String::from("Harry Potter"), 3);
-    book_shelf.entry(String::from("Lord of the Rings")).or_insert(1);
-    book_shelf.entry(String::from("Harry Potter")).or_insert(5);
+    #[derive(Debug)]
+    struct Contact {
+        name: String,
+        phone: String,
+    }
 
-    println!("{:?}", book_shelf);
+    let mut phonebook: HashMap<String, Contact> = HashMap::new();
+
+    phonebook.insert(
+        String::from("Mom"),
+        Contact {
+            name: String::from("Jane Smith"),
+            phone: String::from("555-1234"),
+        },
+    );
+
+    phonebook.insert(
+        String::from("Pizza Place"),
+        Contact {
+            name: String::from("Domino's"),
+            phone: String::from("555-PIZZA"),
+        },
+    );
+
+    match phonebook.get("Mom") {
+        Some(contact) => println!("Calling Mom at {}", contact.phone),
+        None => println!("Mom not in phonebook"),
+    }
+
+    phonebook.remove("Pizza Place");
+    println!("After removing Pizza Place: {:?}", phonebook);
+
+
+    // let mut book_shelf = HashMap::new();
+    // book_shelf.insert(String::from("Harry Potter"), 3);
+    // book_shelf.entry(String::from("Lord of the Rings")).or_insert(1);
+    // book_shelf.entry(String::from("Harry Potter")).or_insert(5);
+
+    // println!("{:?}", book_shelf);
 
     // let mut word_count = HashMap::new();
     // let text = "hello world hello rust hello world";
