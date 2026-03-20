@@ -1,66 +1,104 @@
 fn main() {
-    // let v: Vec<i32> = Vec::new();
-    // let v = vec![1,2,3];
 
-    //Updating a Vector
-    // let mut v = Vec::new();
+    // let fruit_basket = vec!["apple", "banana", "orange", "grape"];
 
-    // v.push(5);
-    // v.push(6);
-    // v.push(7);
-    // v.push(8);
+    // let first_fruit = &fruit_basket[0];
+    // println!("First fruit: {}", first_fruit);
 
-    // println!("{:?}", v);
-
-    // let v2 = vec![1,2,3,4,5];
-
-    // let third: &i32 = &v2[2];
-    // println!("The third element is {third}");
-
-    // let third: Option<&i32> = v2.get(2);
-    // match third {
-    //     Some(third) => println!("The third element is {third}"),
-    //     None => println!("There is no third element."),
+    // let second_fruit = fruit_basket.get(1);
+    // match second_fruit {
+    //     Some(fruit) => println!("Second fruit: {}", fruit),
+    //     None => println!("No fruit at that position"),
     // }
 
-    // let v = vec![1,2,3,4,5];
-    // let does_not_exist = &v[100];
-    // println!("{}", does_not_exist);
-    // let does_not_exist = v.get(100);
-    // println!("{:?}", does_not_exist);
+    // let tenth_fruit = fruit_basket.get(9);
+    // println!("Tenth fruit: {:?}", tenth_fruit);
 
-    // let mut v = vec![1,2,3,4,5];
 
-    // let first = &v[0];
+    // let empty_backpack: Vec<i32> = Vec::new();
 
-    // v.push(6);
+    // let toy_cars = vec!["red car", "blue car", "yellow car"];
 
-    // println!("The first element is: {first}");
+    // let scores = vec![95, 87, 92,100];
 
-    // let v = vec![100,32,57];
-    // for i in &v {
-    //     println!("{i}");
-    // }
+    // let mut pocket = Vec::new();
+    // pocket.push("marble");
+    // pocket.push("coin");
+    // pocket.push("key");
 
-    // let mut v = vec![100,32,57];
-    // for i in &mut v {
-    //     *i += 50;
-    //     println!("{i}");
-    // }
+    // println!("My pocket has: {:?}", pocket);
 
-    // enum SpreadsheetCell {
-    //     Int(i32),
-    //     Float(f64),
-    //     Text(String),
-    // }
+    // let mut candy_jar = vec!["chocolate", "lollipop", "gum"];
+    // let last_candy = candy_jar.pop();
 
-    // let row = vec![
-    //     SpreadsheetCell::Int(3),
-    //     SpreadsheeCell::Text(String::from("blue")),
-    //     SpreadsheetCell::Float(10.12);
+    // println!("I ate: {:?}", last_candy);
+    // println!("Left in jar: {:?}", candy_jar);
+}
 
-    // ]
+
+// fn main() {
+//     // let v: Vec<i32> = Vec::new();
+//     // let v = vec![1,2,3];
+
+//     //Updating a Vector
+//     // let mut v = Vec::new();
+
+//     // v.push(5);
+//     // v.push(6);
+//     // v.push(7);
+//     // v.push(8);
+
+//     // println!("{:?}", v);
+
+//     // let v2 = vec![1,2,3,4,5];
+
+//     // let third: &i32 = &v2[2];
+//     // println!("The third element is {third}");
+
+//     // let third: Option<&i32> = v2.get(2);
+//     // match third {
+//     //     Some(third) => println!("The third element is {third}"),
+//     //     None => println!("There is no third element."),
+//     // }
+
+//     // let v = vec![1,2,3,4,5];
+//     // let does_not_exist = &v[100];
+//     // println!("{}", does_not_exist);
+//     // let does_not_exist = v.get(100);
+//     // println!("{:?}", does_not_exist);
+
+//     // let mut v = vec![1,2,3,4,5];
+
+//     // let first = &v[0];
+
+//     // v.push(6);
+
+//     // println!("The first element is: {first}");
+
+//     // let v = vec![100,32,57];
+//     // for i in &v {
+//     //     println!("{i}");
+//     // }
+
+//     // let mut v = vec![100,32,57];
+//     // for i in &mut v {
+//     //     *i += 50;
+//     //     println!("{i}");
+//     // }
+
+//     // enum SpreadsheetCell {
+//     //     Int(i32),
+//     //     Float(f64),
+//     //     Text(String),
+//     // }
+
+//     // let row = vec![
+//     //     SpreadsheetCell::Int(3),
+//     //     SpreadsheeCell::Text(String::from("blue")),
+//     //     SpreadsheetCell::Float(10.12);
+
+//     // ]
 
     
 
-}
+// }

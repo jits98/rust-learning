@@ -1,0 +1,51 @@
+    Blocking waiting for file lock on package cache
+   0.007214375s  INFO prepare_target{force=false package_id=string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter) target="string_chapter"}: cargo::core::compiler::fingerprint: fingerprint error for string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter)/Check { test: false }/TargetInner { name: "string_chapter", doc: true, ..: with_path("/Users/home/Desktop/projects/string_chapter/src/main.rs", Edition2024) }
+   0.008049375s  INFO prepare_target{force=false package_id=string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter) target="string_chapter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/home/Desktop/projects/string_chapter/target/debug/.fingerprint/string_chapter-73260cf801c6db36/bin-string_chapter`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.024035042s  INFO prepare_target{force=false package_id=string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter) target="string_chapter"}: cargo::core::compiler::fingerprint: fingerprint error for string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter)/Check { test: true }/TargetInner { name: "string_chapter", doc: true, ..: with_path("/Users/home/Desktop/projects/string_chapter/src/main.rs", Edition2024) }
+   0.024046084s  INFO prepare_target{force=false package_id=string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter) target="string_chapter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/home/Desktop/projects/string_chapter/target/debug/.fingerprint/string_chapter-66e7cc5536b3cb07/test-bin-string_chapter`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking string_chapter v0.1.0 (/Users/home/Desktop/projects/string_chapter)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
