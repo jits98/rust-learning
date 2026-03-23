@@ -1,13 +1,24 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut grade_book: HashMap<String, Vec<i32>> = HashMap::new();
+    let mut word_count = HashMap::new();
+    let sentence = "rust is fast and rust is memory safe";
 
-    grade_book.entry(String::from("Math")).or_insert(vec![]).push(95);
-    grade_book.entry(String::from("Math")).or_insert(vec![]).push(87);
-    grade_book.entry(String::from("Science")).or_insert(vec![]).push(92);
+    for word in sentence.split_whitespace() {
+        let count = word_count.entry(word).or_insert(0);
+        *count += 1;
+    }
+    println!("Word counts: {:?}", word_count);
+}
 
-    println!("Grade book: {:?}", grade_book);
+// fn main() {
+//     let mut grade_book: HashMap<String, Vec<i32>> = HashMap::new();
+
+//     grade_book.entry(String::from("Math")).or_insert(vec![]).push(95);
+//     grade_book.entry(String::from("Math")).or_insert(vec![]).push(87);
+//     grade_book.entry(String::from("Science")).or_insert(vec![]).push(92);
+
+//     println!("Grade book: {:?}", grade_book);
 
     // let mut scores = HashMap::new();
     // let blue_score = 10;
@@ -117,7 +128,7 @@ fn main() {
     // let team_scores: HashMap<_,_> = teams.iter().zip(scores.iter()).collect();
     // println!("{:?}", team_scores);
 
-}
+// }
 
 
 // use std::collections::HashMap;

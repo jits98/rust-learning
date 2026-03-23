@@ -1,17 +1,59 @@
-
 fn main() {
-    
-    #[derive(Debug)]
-    enum CellPhoneItem {
-        Text(String),
-        Picture(Vec<u8>),
-        Video(String),
-    }
+    let vector = vec![1,2,2,3,4,4,5];
 
-    let mut my_phone: Vec<CellPhoneItem> = Vec::new();
-    my_phone.push(CellPhoneItem::Text(String::from("Hello Mom!")));
-    my_phone.push(CellPhoneItem::Picture(vec![0, 255, 128, 200]));
-    println!("Phone contents: {:?}", my_phone);
+    println!("{:?}", remove_duplicates(vector));
+}
+
+fn remove_duplicates(v: Vec<i32>) -> Vec<i32> {
+    let mut new_vec = Vec::new();
+    for num in v.iter().enumerate() {
+        if num != v {
+            new_vec.push(num);
+        }
+    }
+    return new_vec;
+}
+
+
+// fn main() {
+//     let vector = vec![34, 50, 25, 100, 65];
+//     println!("{}", largest(&vector));
+
+// }
+
+// fn largest(v: &Vec<i32>) -> i32 {
+//     let mut largest = 0;
+
+//     for num in v {
+//         if *num > largest {
+//             largest = *num;
+//         }
+//     }
+//     return largest;
+// }
+
+// fn main() {
+//     let vector = vec![5,10,15,20];
+//     println!("{:?}", sum_of_vector(&vector));
+
+    
+// }
+
+// fn sum_of_vector(v: &Vec<i32>) -> i32 {
+//     let mut sum = 0;
+//     for num in v {
+//         sum += num;
+//     };
+//     return sum;
+// }
+
+// fn main() {
+//     let numbers = vec![1,2,3,4,5];
+
+//     for num in &numbers {
+//         println!("{num}");
+//     }
+// }
 
     // let classroom_grades = vec![85, 90, 78, 92, 88];
 
@@ -61,7 +103,7 @@ fn main() {
 
     // println!("I ate: {:?}", last_candy);
     // println!("Left in jar: {:?}", candy_jar);
-}
+// }
 
 
 // fn main() {
