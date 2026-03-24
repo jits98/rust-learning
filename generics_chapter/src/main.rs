@@ -10,4 +10,16 @@ fn main() {
     }
 
     println!("The largest number is {largest}");
+
+    let number_list2 = vec![102, 34, 6000, 89, 54, 2, 43, 8];
+
+    let mut largest2 = &number_list2[0];
+
+    for number2 in &number_list2 {
+        if number2 > largest2 {
+            largest2 = number2;
+        }
+    }
+
+    println!("The largest number is {largest2}");
 }
