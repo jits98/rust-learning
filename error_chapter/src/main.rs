@@ -1,8 +1,15 @@
 use std::fs::File;
 
-fn main() {
+fn main() -> Resutl<(), Box<dyn Error>> {
     let greeting_file = File::open("hello.txt")?;
+
+    Ok(());
+    // let greeting_file = File::open("hello.txt")?;
 }
+
+// fn last_char_of_first_line(text: &str) -> Option<char> {
+//     text.lines().next()?.chars().last();
+// }
 
 
 
