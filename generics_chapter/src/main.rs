@@ -1,8 +1,8 @@
 
 #[derive(Debug)]
-struct Point<T> {
+struct Point<T, U> {
     x: T,
-    y: T,
+    y: U,
 }
 
 fn main() {
@@ -11,6 +11,7 @@ fn main() {
     println!("{:?}", integer);
     println!("{:?}", float);
     let wont_work = Point { x: 5, y: 4.0};
+    println!("{:?}", wont_work);
 }
 
 
