@@ -1,18 +1,44 @@
-
-#[derive(Debug)]
-struct Point<T, U> {
+struct Point<T> {
     x: T,
-    y: U,
+    y: T,
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
 }
 
 fn main() {
-    let integer = Point {x:5, y: 10};
-    let float = Point {x: 1.0, y: 4.0};
-    println!("{:?}", integer);
-    println!("{:?}", float);
-    let wont_work = Point { x: 5, y: 4.0};
-    println!("{:?}", wont_work);
+    let p = Point { x: 5, y: 10};
+
+    println!("p.x = {}", p.x());
 }
+
+
+
+
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
+
+
+
+// #[derive(Debug)]
+// struct Point<T, U> {
+//     x: T,
+//     y: U,
+// }
+
+// fn main() {
+//     let integer = Point {x:5, y: 10};
+//     let float = Point {x: 1.0, y: 4.0};
+//     println!("{:?}", integer);
+//     println!("{:?}", float);
+//     let wont_work = Point { x: 5, y: 4.0};
+//     println!("{:?}", wont_work);
+// }
 
 
 //  fn largest_i32(list: &[i32]) -> &i32 {
