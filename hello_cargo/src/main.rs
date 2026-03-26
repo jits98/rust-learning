@@ -1,40 +1,88 @@
-fn main() {
-    let rect1 = Rectangle {
-        width: 20.00,
-        height: 30.00,
-    };
-    let rect2 = Rectangle {width: 30.00, height:40.00};
-
-    let square = Rectangle::square(10.00);
-
-    println!("{:?}", rect1);
-
-    println!("Area of Rectangle: {:?}", rect1.area());
-
-    println!("The answer of holding is: {}", rect1.can_hold(&rect2));
-
-    println!("The square is: {:?} ", square);
+fn non_repeating(s: &str) -> char {
+    let new;
 }
 
-#[derive(Debug)]
-struct Rectangle {
-    width: f64,
-    height: f64,
-}
 
-impl Rectangle {
-    fn area(&self) -> f64 {
-        self.width * self.height
-    }
 
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
-    }
+// fn reverse_vector(v: Vec<i32>) -> Vec<i32> {
+//     let reversed: Vec<i32> = v.into_iter().rev().collect();
 
-    fn square(size: f64) -> Rectangle {
-        Rectangle { width: size, height : size}
-    } 
-}
+//     reversed
+// }
+
+// fn main() {
+//     let vec = vec![1,2,3,4];
+
+//     println!("The reverse vector is: {:?}", reverse_vector(vec));
+// }
+
+
+// fn count_chars(s: &str) -> usize {
+//     s.len()
+// }
+
+// fn main() {
+//     let word = String::from("rust");
+
+//     println!("The number of characters in word: {}", count_chars(&word));
+// }
+
+
+
+// fn even_number(v: &Vec<i32>) -> Vec<i32> {
+//     let mut even_vec = Vec::new();
+//     for num in v {
+//         if num % 2 == 0 {
+//             even_vec.push(*num);
+//         }
+//     }
+//     even_vec
+// }
+
+// fn main() {
+//     let list = vec![1,2,3,4,5,6];
+
+//     println!("The even numbers in list: {:?}", even_number(&list));
+// }
+
+
+// fn main() {
+//     let rect1 = Rectangle {
+//         width: 20.00,
+//         height: 30.00,
+//     };
+//     let rect2 = Rectangle {width: 30.00, height:40.00};
+
+//     let square = Rectangle::square(10.00);
+
+//     println!("{:?}", rect1);
+
+//     println!("Area of Rectangle: {:?}", rect1.area());
+
+//     println!("The answer of holding is: {}", rect1.can_hold(&rect2));
+
+//     println!("The square is: {:?} ", square);
+// }
+
+// #[derive(Debug)]
+// struct Rectangle {
+//     width: f64,
+//     height: f64,
+// }
+
+// impl Rectangle {
+//     fn area(&self) -> f64 {
+//         self.width * self.height
+//     }
+
+//     fn can_hold(&self, other: &Rectangle) -> bool {
+//         self.width > other.width && self.height > other.height
+//     }
+
+//     fn square(size: f64) -> Rectangle {
+//         Rectangle { width: size, height : size}
+//     } 
+// }
 
 
 
