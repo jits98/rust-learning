@@ -1,4 +1,7 @@
-fn main() {}
+fn main() {
+    let s = 3.to_string();
+    println!("{}", s);
+}
 
 
 

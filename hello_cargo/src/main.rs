@@ -1,6 +1,61 @@
-fn non_repeating(s: &str) -> char {
-    let new;
+#[derive(Debug)]
+struct Book {
+    title: String,
+    author: String,
+    pages: u32,
 }
+
+impl Book {
+    fn is_long(&self) -> bool {
+        self.pages > 300
+    }
+
+    fn same_author(&self, other: &Book) -> bool {
+        self.author == other.author
+    }
+
+    fn describe(&self) -> String {
+        format!("{} by {}, and total pages in the book are {}", self.title, self.author, self.pages)
+        
+        // self.title.clone() + " by " + &self.author + ", " + &self.pages.to_string();
+
+    }
+
+    fn new(title: &str, author: &str, pages: u32) -> Book {
+        Book { title: title.to_string(), author: author.to_string(), pages }
+    }
+
+    fn lengthy_book(&self, other: &Book) -> bool {
+        self.pages > other.pages      
+    }
+}
+
+
+fn main() {
+    let book1 = Book::new("Exercised", "Daniel", 350);
+
+    let book2 = Book::new("My life in full", "Indira Nooyi", 280);
+
+    let book3 = Book::new("Edible Economics", "Ho joon chong", 320);
+
+    println!("{}", Book::describe(&book1));
+    println!("{}", Book::describe(&book2));
+    println!("{}", Book::describe(&book3));
+
+    println!("The first is more than 300 pages: {}", Book::is_long(&book1));
+    println!("The second book is more than 300 pages: {}", Book::is_long(&book2));
+    println!("The third book is more than 300 pages: {}", Book::is_long(&book3));
+
+    println!("The first book is more lengthy than second book: {}", Book::lengthy_book(&book1, &book2));
+
+    println!("The first and second book has same author: {}", Book::same_author(&book1, &book2));
+    
+}
+
+
+// fn non_repeating(s: &str) -> char {
+//     let new;
+// }
 
 
 
