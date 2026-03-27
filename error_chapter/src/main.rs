@@ -1,23 +1,184 @@
-use std::net::IpAddr;
+use std::fmt;
 
-fn main() {
+#[derive(Debug)]
+enum BankError {
+    InsufficientFunds {balance: f64, requested: f64 },
+    AccountLocked,
+    InvalidAmount { amount: f64, reason: String },
+}
 
-    pub struct Guess {
-        value: i32,
-    }
-
-    impl Guess {
-        pub fn new(value: i32) -> Guess {
-            if value < 1 || value > 100 {
-                panic!("Guess value must be between 1 and 100, got {value}.")
+impl fmt::Display for BankError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            BankError::InsufficientFunds { balance, requested } => {
+                write!(f, "Insufficient funds! Balance: ${}, Requested: ${}", balance, requested)
             }
-            Guess { value }
-        }
-
-        pub fn value(&self) -> i32 {
-            self.value
+            BankError::AccountLocked => {
+                write!(f, "Account is locked due to security concerns")
+            }
+            BankError::InvalidAmount { amount, reason } => {
+                write!(f, "Invalid amount ${}: {}", amount, reason)
+            }
         }
     }
+}
+
+impl std::error::Error for BankError {}
+
+struct BankAccount {
+    owner: String,
+    balance: f64,
+    locked: bool,
+}
+
+impl BankAccount {
+    fn new(owner: String) -> Self {
+        BankAccount {
+            owner,
+            balance: 0.0,
+            locked: false,
+        }
+    }
+
+    fn deposit(&mut self, amount: f64) -> Result<(), BankError> {
+        if amount <= 0.0 {
+            return Err(BankError::InvalidAmount {
+                amount,
+                reason: String::from("Amount must be positive"),
+            });
+        }
+        if self.locked {
+            return Err(BankError::AccountLocked);
+        }
+
+        self.balance += amount;
+        println!("Deposited ${:.2}. New balance: ${:.2}", amount, self.balance);
+        Ok(())
+    }
+
+    fn withdraw(&mut self, amount: f64) -> Result<f64, BankError> {
+        if amount <= 0.0 {
+            return Err(BankError::InvalidAmount {
+                amount,
+                reason: String::from("Amount must be positive"),
+            });
+        }
+        if self.locked {
+            return Err(BankError::AccountLocked);
+        }
+        if amount > self.balance {
+            return Err(BankError::InsufficientFunds {
+                balance: self.balance,
+                requested: amount,
+            });
+        }
+
+        self.balance -= amount;
+        println!("Withdrew ${:.2}. Remaining balance: ${:.2}", amount, self.balance);
+        Ok(amount)
+    }
+
+    fn lock_account(&mut self) {
+        self.locked = true;
+        println!("Account locked!");
+    }
+}
+
+
+fn main() -> Result<(), BankError> {
+    let mut account = BankAccount::new(String::from("Alice"));
+
+    account.deposit(100.0)?;
+    account.withdraw(50.0)?;
+
+    match account.withdraw(200.0) {
+        Ok(_) => println!("Withdrawal successful"),
+        Err(e) => println!("Withdrawal failed: {}", e),
+    }
+
+    account.lock_account();
+    match account.deposit(50.0) {
+        Ok(_) => println!("Deposit successful"),
+        Err(e) => println!("Deposit failed: {}", e),
+    }
+
+    Ok(())
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// use std::net::IpAddr;
+
+// fn main() {
+
+//     pub struct Guess {
+//         value: i32,
+//     }
+
+//     impl Guess {
+//         pub fn new(value: i32) -> Guess {
+//             if value < 1 || value > 100 {
+//                 panic!("Guess value must be between 1 and 100, got {value}.")
+//             }
+//             Guess { value }
+//         }
+
+//         pub fn value(&self) -> i32 {
+//             self.value
+//         }
+//     }
     
     // let home: IpAddr = "127.0.0.1"
     //     .parse()
@@ -38,7 +199,7 @@ fn main() {
     //     }
     // }
 
-}
+// }
 
 
 // use std::fs::File;

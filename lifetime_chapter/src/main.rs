@@ -1,7 +1,31 @@
-// #[derive(Debug)]
-// struct ImportantExcerpt<'a> {
-//     part: &'a str,
-// }
+use std::fmt::Display;
+
+fn longest_with_an_annoucement<'a, T> (
+    x: &'a str,
+    y: &'a str,
+    ann: T,
+) -> &'a str 
+where 
+    T: Display,
+    {
+        println!("Announcement! {ann}");
+        if x.len() > y.len() { x } else { y }
+    }
+
+#[derive(Debug)]
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+impl<'a> ImportantExcerpt<'a> {
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please: {announcement}");
+        self.part
+    }
+    fn level(&self) -> i32 {
+        3
+    }
+}
 
 // fn main() {
 //     let novel = String::from("Call me Ishmael. Some years ago...");
@@ -13,7 +37,9 @@
 //     println!("{:?}", i);
 // }
 
-fn first_word(s: &str) -> &str {
+
+
+fn first_word<'a>(s: &'a str) -> &'a str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
@@ -24,8 +50,11 @@ fn first_word(s: &str) -> &str {
     &s[..]
 }
 
-fn main() {}
+fn main() {
+    let s: &'static str = "I have a static lifetime.";
+}
 
+fn longest<'a, 'b> (x: &'a str, y: &'b str) -> &str {}
 
 
 // fn main() {
