@@ -22,10 +22,14 @@ impl Book {
     }
 
     fn new(title: &str, author: &str, pages: u32) -> Book {
-        Book { title: title.to_string(), author: author.to_string(), pages }
+        Book { 
+            title: title.to_string(), 
+            author: author.to_string(), 
+            pages 
+        }
     }
 
-    fn lengthy_book(&self, other: &Book) -> bool {
+    fn is_longer_than(&self, other: &Book) -> bool {
         self.pages > other.pages      
     }
 }
@@ -38,19 +42,77 @@ fn main() {
 
     let book3 = Book::new("Edible Economics", "Ho joon chong", 320);
 
-    println!("{}", Book::describe(&book1));
-    println!("{}", Book::describe(&book2));
-    println!("{}", Book::describe(&book3));
+    println!("{}", book1.describe());
+    println!("{}", book2.describe());
+    println!("{}", book3.describe());
 
-    println!("The first is more than 300 pages: {}", Book::is_long(&book1));
-    println!("The second book is more than 300 pages: {}", Book::is_long(&book2));
-    println!("The third book is more than 300 pages: {}", Book::is_long(&book3));
+    println!("The first is more than 300 pages: {}", book1.is_long());
+    println!("The second book is more than 300 pages: {}", book2.is_long());
+    println!("The third book is more than 300 pages: {}", book3.is_long());
 
-    println!("The first book is more lengthy than second book: {}", Book::lengthy_book(&book1, &book2));
+    println!("The first book is more lengthy than second book: {}", book1.is_longer_than(&book2));
 
-    println!("The first and second book has same author: {}", Book::same_author(&book1, &book2));
+    println!("The first and second book has same author: {}", book1.same_author(&book2));
+
+    let max_dog_age = Dog::max_age();
+    println!("{}", max_dog_age);
+    let my_dog = Dog::new("Rex", 5);
+    println!("{:?}", my_dog);
+
+    println!("{}", my_dog.bark());
     
 }
+
+#[derive(Debug)]
+struct Dog {
+    name: String,
+    age: u32,
+}
+
+impl Dog {
+    fn bark(&self) -> String {
+        format!("{} says woof!", self.name)
+    }
+
+    fn new(name: &str, age: u32) -> Dog {
+        Dog {
+            name: name.to_string(),
+            age
+        }
+    }
+
+    fn max_age() -> u32 {
+        20
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // fn non_repeating(s: &str) -> char {
