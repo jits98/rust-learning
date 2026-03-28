@@ -1,8 +1,71 @@
 // use std::io;
 
 fn main() {
-    let result = add(5,3);
-    println!("{}", result);
+    let config_max = Some(3u8);
+    match config_max {
+        Some(max) => println!("Maximum is {}", max),
+        _ => (),
+    }
+
+    if let Some(max) = config_max {
+        println!("Maximum is {}", max);
+    }
+}
+
+
+
+// fn gives_ownership() -> String {
+//     String::from("hello")
+// }
+
+// fn takes_and_gives_back(s: String) -> String {
+//     s
+// }
+
+// fn take_ownership(some_string: String) {
+//     println!("{}", some_string);
+// }
+
+// fn make_copy(some_integer: i32) {
+//     println!("{}", some_integer);
+// }
+
+// fn add(x: i32, y: i32) -> i32 {
+//     x + y
+// }
+  // let condition = true;
+
+    // let number = if condition { 5 } else { 10 };
+    // println!("{}", number);
+
+    // let mut counter = 0;
+    // let result = loop {
+    //     counter += 1;
+    //     if counter == 10 {
+    //         break counter * 2;
+    //     }
+    // };
+
+    // while number != 0 {
+
+    // }
+    //    enum Message {
+//     Quit,
+//     Move { x: i32, y: i32 },
+//     Write(String),
+//     ChangeColor(u8, u8, u8),
+//    }
+
+    // for element in [1,2,3].iter() {
+    //     println!("{}", element);
+    // }
+
+    // for number in 1..4 {
+    //     println!("{}", number);
+    // }
+
+    // let result = add(5,3);
+    // println!("{}", result);
 
     // let tup = (500, "hello", true);
     // let (x,y,z) = tup;
@@ -23,21 +86,53 @@ fn main() {
     //     Ordering::Greater => println!("Too big!"),
     //     Ordering::Equal => println!("You win!"),
     // }
+    // let s = String::from("hello");
+    // take_ownership(s);
 
-}
+    // let x = 5;
+    // make_copy(x);  
+    // let s1 = gives_ownership();
+    //    let s2 = String::from("hello");
+    //    let s3 = takes_and_gives_back(s2);
+     // let s = String::from("hello world");
+    // let hello = &s[0..5];
+    // println!("{}", hello);
+    // let world = &s[6..11];
+    // println!("{}", world);
+    // let whole = &s[..];  
+    // println!("{}", whole); 
+    // let s: &str = "hello";
+    // println!("{}", s);
+        // enum Option<T> {
+    //     Some(T),
+    //     None,
+    // }
 
+    // let some_number = Some(5);
+    // let some_string = Some("hello");
+    // let absent_number: Option<i32> = None;
+    // let x: i32 = 5;
+    // let y: Option<i32> = Some(10);
+    // let sum = x + y;
 
-fn add(x: i32, y: i32) -> i32 {
-    x + y
-}
+    // fn value_in_cents(coin: Coin) -> u8 {
+//     match coin {
+//         Coin::Penny => {
+//             println!("Lucky penny!");
+//             1
+//         }
+//         Coin::Nickel => 5,
+//         Coin::Dime => 10,
+//         Coin::Quarter => 25,
+//     }
+// }
 
-
-
-
-
-
-
-
+// fn plus_one(x: Option<i32>) -> Option<i32> {
+//     match x {
+//         None => None,
+//         Some(i) => Some(i + 1),
+//     }
+// }
 
 
 
@@ -200,35 +295,6 @@ fn add(x: i32, y: i32) -> i32 {
 //         20
 //     }
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // fn non_repeating(s: &str) -> char {
 // //     let new;
