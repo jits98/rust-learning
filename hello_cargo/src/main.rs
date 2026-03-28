@@ -1,24 +1,41 @@
-use std::collections::HashMap;
+
 fn main() {
-    let mut scores = HashMap::new();
-    scores.insert(String::from("Blue"), 10);
-    scores.insert(String::from("Yellow"), 10);
-    println!("{:?}", scores);
-
-    let score = scores.get("Blue");
-    println!("{:?}", score);
-
-    scores.entry(String::from("Blue")).or_insert(50);
-    scores.entry(String::from("Red")).or_insert(75);
-    println!("{:?}", scores);
-    for (key, value) in &scores {
-        println!("{}: {}", key, value);
-    }
 
 }
 
 
 
+// fn read_username() -> Result<String, io::Error> {
+    //     let mut f = File::open("hello.txt")?;
+    //     let mut s = String::new();
+    //     f.read_to_string(&mut s)?;
+    //     Ok(s)
+// }
+// let f = File::open("hello.txt").unwrap();
+// let f = File::open("hello.txt").expect("Failed");  
+// use std::fs::File;
+ // enum Result<T, E> {
+    //     Ok(T),
+    //     Err(E),
+    // }
+
+    // let file = File::open("hello.txt");
+    // let file = match file {
+    //     Ok(file) => file,
+    //     Err(error) => match error.kind() {
+    //         ErrorKind::NotFound => match File::create("hello.txt") {
+    //             Ok(fc) => fc,
+    //             Err(e) => panic!("Problem creating file: {:?}", e),
+    //         },
+    //         other_error => panic!("Problem opening file: {:?}", other_error),
+    //     }
+    // };
+
+// // panic!("crash and burn");
+
+// let v = vec![1,2,3];
+// v[99];
+// use std::collections::HashMap;
 // use std::io;
 // fn gives_ownership() -> String {
 //     String::from("hello")
@@ -178,14 +195,30 @@ fn main() {
     // for c in hello.chars() {
     //     println!("{}", c);
     // }
-   
+      // let mut scores = HashMap::new();
+    // scores.insert(String::from("Blue"), 10);
+    // scores.insert(String::from("Yellow"), 10);
+    // println!("{:?}", scores);
 
+    // let score = scores.get("Blue");
+    // println!("{:?}", score);
 
+    // scores.entry(String::from("Blue")).or_insert(50);
+    // scores.entry(String::from("Red")).or_insert(75);
+    // println!("{:?}", scores);
+    // for (key, value) in &scores {
+    //     println!("{}: {}", key, value);
+    // }
 
+    // fn read_username() -> Result<String, io::Error> {
+    //     let mut s = String::new();
+    //     File::open("hello.txt")?.read_to_string(&mut s)?;
+    //     Ok(s);
+    // }
 
-
-
-
+    // fn read_username() -> Result<String, io::Error> {
+    //     fs::read_to_string("hello.txt")
+    // }
 
 
 // #[derive(Debug)]
