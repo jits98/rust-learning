@@ -1,19 +1,25 @@
-// use std::io;
-
+use std::collections::HashMap;
 fn main() {
-    let config_max = Some(3u8);
-    match config_max {
-        Some(max) => println!("Maximum is {}", max),
-        _ => (),
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 10);
+    println!("{:?}", scores);
+
+    let score = scores.get("Blue");
+    println!("{:?}", score);
+
+    scores.entry(String::from("Blue")).or_insert(50);
+    scores.entry(String::from("Red")).or_insert(75);
+    println!("{:?}", scores);
+    for (key, value) in &scores {
+        println!("{}: {}", key, value);
     }
 
-    if let Some(max) = config_max {
-        println!("Maximum is {}", max);
-    }
 }
 
 
 
+// use std::io;
 // fn gives_ownership() -> String {
 //     String::from("hello")
 // }
@@ -133,72 +139,46 @@ fn main() {
 //         Some(i) => Some(i + 1),
 //     }
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ // let config_max = Some(3u8);
+    // match config_max {
+    //     Some(max) => println!("Maximum is {}", max),
+    //     _ => (),
+    // }
+
+    // if let Some(max) = config_max {
+    //     println!("Maximum is {}", max);
+    // }
+    // let v: Vec<i32> = Vec::new();
+    // let v = vec![1,2,3];
+
+    // let mut v = Vec::new();
+    // v.push(5);
+    // v.push(6);
+    // v.pop();
+    // println!("{:?}", v);
+    // let third = v.get(2);
+    // println!("{:?}", third);
+
+    // for i in &v {
+    //     println!("{}", i);
+    // }
+
+    // for i in &mut v {
+    //     *i += 50;
+    //     println!("{}", i);
+    // }
+    // let mut s = String::from("foo");
+    // s.push_str("bar");
+    // s.push('!');
+    // s += "baz";
+    // println!("{}", s);
+        // let s = format!("{}-{}-{}", "a", "b", "c");
+    // println!("{}", s);
+    // let hello =  "नमस्ते";
+    // for c in hello.chars() {
+    //     println!("{}", c);
+    // }
+   
 
 
 
