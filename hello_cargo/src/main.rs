@@ -1,5 +1,49 @@
+use std::collections::HashMap;
+use std::fs;
+use std::error::Error;
 
-fn main() {
+#[derive(Debug)]
+struct Config<T> {
+    settings: HashMap<String, T>,
+}
+
+impl<T: Clone + std::fmt::Debug> Config<T> {
+    fn new() -> Self {
+        Config {
+            settings: HashMap::new(),
+        }
+    }
+
+    fn load(path: &str) -> Result<Self, Box<dyn Error>>
+    where 
+        T: std::str::FromStr,
+        <T as std::str::FromStr>::Err: std::fmt::Debug,
+    {
+        let content = fs::read_to_string(path)?;
+        let mut config = Config::new();
+
+        for line in content.lines() {
+            if let Some((key, value)) = line.split_once('=') {
+                let parsed = value.parse::<T>()
+                    .expect("Failed to parse value");
+                config.settings.insert(key.to_string(), parsed);
+            }
+        }
+        Ok(config)
+    }
+
+    fn get(&self, key: &str) -> Option<&T> {
+        self.settings.get(key)
+    }
+}
+fn main() -> Result<(), Box<dyn Error>> {
+    let config: Config<i32> = Config::load("config.txt")?;
+
+    match config.get("timeout") {
+        Some(timeout) => println!("Timeout: {} seconds", timeout),
+        None => println!("No timeout setting found"),
+    }
+    Ok(())
 
 }
 
