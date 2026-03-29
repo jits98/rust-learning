@@ -3,6 +3,79 @@ fn main() {
 
 }
 
+// fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+//     if x.len() > y.len() { x } else { y }
+// }
+
+// struct Excerpt<'a> {
+//     part: &'a str,
+// }
+
+// fn first_word(s: &str) -> &str {
+//     s.split_whitespace().next().unwrap()
+// }
+
+// let s: &'static str = "I live forever";
+
+// trait Summary {
+//     fn summarize(&self) -> String;
+
+//     fn default_summary(&self) -> String {
+//         String::from("Read more...")
+//     }
+// }
+
+// struct NewsArticle {
+//     headline: String,
+//     location: String,
+// }
+
+// impl Summary for NewsArticle {
+//     fn summarize(&self) -> String {
+//         format!("{}, by {}", self.headline, self.location)
+//     }
+// }
+
+// fn notify(item: &impl Summary) {
+//     println!("Breaking news! {}", item.summarize());
+// }
+
+// fn notify<T: Summary>(item: &T) {
+//     println!("{}", item.summarize());
+// }
+
+// fn complex<T: Summary + Display>(item: &T) {}
+
+// fn complex<T>(item: &T)
+// where 
+//     T: Summary + Display,
+// {}
+
+// fn returns_summarizable() -> impl Summary {
+//     NewsArticle {
+//         headline: String::from("Penguins win"),
+//         location: String::from("Antarctica"),
+//     }
+// }
+
+// fn largest<T: PartialOrd>(list: &[T]) -> &T{
+//     let mut largest = &list[0];
+//     for item in list {
+//         if item > largest {
+//             largest = item;
+//         }
+//     }
+//     largest
+// }
+// struct Point<T> {
+//     x: T,
+//     y: T,
+// }
+
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
 
 
 // fn read_username() -> Result<String, io::Error> {
