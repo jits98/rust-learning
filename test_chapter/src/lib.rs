@@ -1,18 +1,6 @@
-pub struct Guess {
-  value: i32,
-}
-
-impl Guess {
-  pub fn new(value: i32) -> Guess {
-    if value < 1 {
-      panic!("Guess value must be less than or equal to 100, got {value}.");
-    } else if value > 100 {
-      panic!(
-        "Guess value must be greater than or equal to 1, got {value}."
-      );
-    }
-    Guess{ value }
-  }
+fn prints_and_returns_10(a: i32) -> i32 {
+  println!("I got the value {a}");
+  10
 }
 
 #[cfg(test)]
@@ -20,22 +8,84 @@ mod tests {
   use super::*;
 
   #[test]
-  fn it_works() -> Result<(), String> {
-    let result = add(2,2);
-
-    if result == 4 {
-      Ok(())
-    } else {
-      Err(String::from("two plus two does not equal four"))
-    }
+  fn this_test_will_pass() {
+    let value = prints_and_returns_10(4);
+    assert_eq!(value, 10);
   }
 
   #[test]
-  #[should_panic(expected = "less than or equal to 100")]
-  fn greater_than_100() {
-    Guess::new(200);
+  fn this_test_will_fail() {
+    let value = prints_and_returns_10(8);
+    assert_eq!(value, 5);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// pub struct Guess {
+//   value: i32,
+// }
+
+// impl Guess {
+//   pub fn new(value: i32) -> Guess {
+//     if value < 1 {
+//       panic!("Guess value must be less than or equal to 100, got {value}.");
+//     } else if value > 100 {
+//       panic!(
+//         "Guess value must be greater than or equal to 1, got {value}."
+//       );
+//     }
+//     Guess{ value }
+//   }
+// }
+
+// #[cfg(test)]
+// mod tests {
+//   use super::*;
+
+//   #[test]
+//   fn it_works() -> Result<(), String> {
+//     let result = add(2,2);
+
+//     if result == 4 {
+//       Ok(())
+//     } else {
+//       Err(String::from("two plus two does not equal four"))
+//     }
+//   }
+
+//   #[test]
+//   #[should_panic(expected = "less than or equal to 100")]
+//   fn greater_than_100() {
+//     Guess::new(200);
+//   }
+// }
 
 
 // #[test]
