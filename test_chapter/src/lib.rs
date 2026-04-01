@@ -5,10 +5,10 @@ pub struct Guess {
 impl Guess {
   pub fn new(value: i32) -> Guess {
     if value < 1 {
-      panic!("Guess value must be between 1 and 100, got {value}.");
+      panic!("Guess value must be less than or equal to 100, got {value}.");
     } else if value > 100 {
       panic!(
-        "Guess value must be less than or equal to 100, got {value}."
+        "Guess value must be greater than or equal to 1, got {value}."
       );
     }
     Guess{ value }
@@ -18,6 +18,17 @@ impl Guess {
 #[cfg(test)]
 mod tests {
   use super::*;
+
+  #[test]
+  fn it_works() -> Result<(), String> {
+    let result = add(2,2);
+
+    if result == 4 {
+      Ok(())
+    } else {
+      Err(String::from("two plus two does not equal four"))
+    }
+  }
 
   #[test]
   #[should_panic(expected = "less than or equal to 100")]
